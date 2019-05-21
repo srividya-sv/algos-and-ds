@@ -27,6 +27,7 @@ class Solution {
     public void getAllPermutations(int[] nums, List<List<Integer>> result, int start, int end) {
         if(start > end) return ;
         
+        // When the end of the list is reached, add it to the result list
         if (start == end) {
             List<Integer> list = new ArrayList<>();
             for(int elem: nums) {
@@ -36,6 +37,7 @@ class Solution {
             return; 
         }
         
+        // Swap every character with the first character, do it recursively
         for(int i = start; i <= end; i++) {
             int temp = nums[i];
             nums[i] = nums[start];
